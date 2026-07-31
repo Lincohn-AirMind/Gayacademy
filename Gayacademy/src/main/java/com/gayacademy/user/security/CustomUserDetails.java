@@ -4,10 +4,11 @@ import com.gayacademy.user.domain.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
-import java.util.Collections;
+import java.util.List;
 import java.util.UUID;
 
 @Getter
@@ -19,6 +20,7 @@ public class CustomUserDetails implements UserDetails {
     private final String email;
     private final String password;
     private final boolean ativo;
+    private final String role;
 
     public static CustomUserDetails from(User user) {
         return new CustomUserDetails(
@@ -26,13 +28,14 @@ public class CustomUserDetails implements UserDetails {
                 user.getUsername(),
                 user.getEmail(),
                 user.getPasswordHash(),
-                user.getAtivo()
+                user.getAtivo(),
+                user.getRole().name()
         );
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Collections.emptyList();
+        return List.of(new SimpleGrantedAuthority("ROLE_" + role));
     }
 
     @Override

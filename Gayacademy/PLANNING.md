@@ -2,10 +2,44 @@
 
 Selecione um requisito pelo qual será responsável e coloque o nome ao lado.
 
+
+Comentario (domínio)       ✅ quase pronto — adicionar campo content
+CommentRepository          ✅ pronto
+Migration SQL (posts/comments/likes)  ❌ não existe
+CommentService             [x] feito
+CommentController          [x] existe e está pronto
+CommentRequest DTO         [x] feito
+CommentResponse DTO        [x] feito
+PostResponse DTO           [x] feito
+PostService                [x] feito
+PostController             [x] feito
+Configurar websocket       []
+Chat                       []
+ChatRepository             []
+ChatService                []
+Chat                       []
+ChatRepository             []
+ChatController             []
+ChatReponse                []
+ChatRequest                []
+Message                    []
+MessageRepository          []
+MessageController          []
+MessageService             []
+MessageResponse            []
+MessageRequest             []
+Notificacao                []
+Adm                        []
+AdmController              []
+AdmService                 []
+AdmRepository              []
+
+
+
 ## 1. Requisitos Funcionais da API
 
 ### A. Módulo de Usuário e Grafo Social (USR)
-- [ ] USR-01: Cadastro e login com autenticação JWT usando Spring Security e suporte a refresh token.
+- [ feito ] USR-01: Cadastro e login com autenticação JWT usando Spring Security e suporte a refresh token.
 ////////////////////
 ## IMPORTANTE ###
 # adm

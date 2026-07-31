@@ -59,4 +59,7 @@ public class UserProfile {
     @UpdateTimestamp
     @Column(name = "updated_at", nullable = false)
     private OffsetDateTime updatedAt;
+
+    @JoinColumn(name="user_like")
+    private UUID idLike;
 }

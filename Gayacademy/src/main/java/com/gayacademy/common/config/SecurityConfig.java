@@ -39,6 +39,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(PUBLIC_URLS).permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/v1/users/{id}").permitAll()
+                        .requestMatchers("/adm/**").hasRole("ADMIN")
+                        .requestMatchers("/ws/chat/**").permitAll()  // auth feita no STOMP CONNECT
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);

@@ -1,5 +1,6 @@
 package com.gayacademy.user.domain;
 
+import com.gayacademy.user.domain.enums.UserRole;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -43,6 +44,11 @@ public class User {
     @Column(name = "email_verificado", nullable = false)
     @Builder.Default
     private Boolean emailVerificado = false;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, length = 10)
+    @Builder.Default
+    private UserRole role = UserRole.USER;
 
     @CreationTimestamp
     @Column(name = "created_at", nullable = false, updatable = false)
